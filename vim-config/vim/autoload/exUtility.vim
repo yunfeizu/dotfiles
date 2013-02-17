@@ -2556,6 +2556,37 @@ function exUtility#GetUpdateVimentryRefsCommand( type ) " <<<
     return cmd
 endfunction " >>>
 
+
+function exUtility#CopyYcmExtraConf()
+    " init platform dependence value
+    let folder_name = 'ycm'
+    let copy_cmd = ''
+    if has("win32")
+        let copy_cmd = 'copy'
+    elseif has("unix")
+        let copy_cmd = 'cp'
+    endif
+
+    " copy quick gen script
+    let ycm_extra_conf = 'ycm_extra_conf.py'
+
+    " get quick gen script from repository
+    let full_ycm_extra_conf = fnamemodify( g:ex_toolkit_path . '/' . folder_name . '/' . ycm_extra_conf, ":p" )
+
+    if findfile( full_ycm_extra_conf ) == ""
+        call exUtility#WarningMsg('Error: file ' . full_ycm_extra_conf . ' not found')
+    else
+        let cmd = copy_cmd . ' ' . '"' . full_ycm_extra_conf . '"' . ' .' . ycm_extra_conf 
+        exec 'silent !' . cmd
+        echo 'file copied: ' . ycm_extra_conf
+    endif
+    echomsg "exUtility#CopyYcmExtraConf"
+
+    "
+    return ycm_extra_conf
+endfunction " >>>
+
+
 " ------------------------------------------------------------------ 
 " Desc: 
 " ------------------------------------------------------------------ 
@@ -2946,6 +2977,18 @@ function exUtility#CreateQuickGenProject() " <<<
     endif
     if findfile( quick_gen_custom_post, escape(g:exES_CWD,' \') ) == ""
         call writefile ( [], quick_gen_custom_post )
+    endif
+    
+    " write custom_setting_vim
+    let custom_setting_vim = g:exES_vimfiles_dirname . '/custom_setting.vim'
+    if findfile( custom_setting_vim, escape(g:exES_CWD,' \') ) == ""
+        call writefile ( [],  custom_setting_vim )
+    endif
+
+    " create YCM custom setting
+    let ycm_extra_setting = g:exES_CWD . '.ycm_extra_conf.py'
+    if findfile( ycm_extra_setting, escape(g:exES_CWD,' \') ) == ""
+      call exUtility#CopyYcmExtraConf()
     endif
 
     " 

@@ -313,6 +313,12 @@ function g:exES_SetEnvironment( force_reset ) " <<<
         "
         call exUtility#CreateIDLangMap ( exUtility#GetProjectFilter("file_filter") )
         call exUtility#CreateQuickGenProject ()
+        
+        "source cutom_setting
+        let g:custom_setting_file = g:exES_CWD.'/'.g:exES_vimfiles_dirname.'/custom_setting.vim'
+        exe 'source '.g:custom_setting_file
+
+
     endif
 endfunction " >>>
 
@@ -372,14 +378,12 @@ function g:exES_UpdateEnvironment() " <<<
         let &tags = escape(g:exES_Tag, " ")
     endif
 
-    "source cutom_setting
-    let g:custom_setting_file = g:exES_CWD.'/'.g:exES_vimfiles_dirname.'/custom_setting.vim'
-    exe 'source '.g:custom_setting_file
-
     " open exProject window
     if exists( 'g:exES_Project' )
         silent exec g:exES_project_cmd.' '.g:exES_Project
         silent exec 'ExpjUpdateFilters'
+        " close exProject windows
+        silent exec 'ExpjSelectToggle' 
     endif
 
     " init macro list
