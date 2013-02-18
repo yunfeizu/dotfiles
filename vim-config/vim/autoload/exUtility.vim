@@ -2986,7 +2986,7 @@ function exUtility#CreateQuickGenProject() " <<<
     endif
 
     " create YCM custom setting
-    let ycm_extra_setting = g:exES_CWD . '.ycm_extra_conf.py'
+    let ycm_extra_setting = g:exES_CWD . '/.ycm_extra_conf.py'
     if findfile( ycm_extra_setting, escape(g:exES_CWD,' \') ) == ""
       call exUtility#CopyYcmExtraConf()
     endif

@@ -83,12 +83,9 @@ let g:ctrlp_extensions = ['buffertag']
 map <unique> <silent> <F5> :CtrlP CWD<CR>
 nmap <unique> <silent> <M-b> :CtrlPBuffer<CR>
 
-let Grep_Skip_Dirs='RCS CVS SCCS .svn'
+" let Grep_Skip_Dirs='RCS CVS SCCS .svn'
 nnoremap <F8> :GundoToggle<CR> <C-w>=
 nnoremap <F7> :YRShow<CR>
-
-
-nmap <Leader>N <Plug>MarkAllClear
 
 
 " setting for EasyGrep
@@ -106,7 +103,7 @@ let g:NERDTreeMapToggleZoom = "<space>"
 
 " we can't use <tab> as our snippet key since we use that with ycm
 let g:UltiSnipsSnippetsDir         = $HOME . '/.vim/UltiSnips'
-" make ~/.vim/UltiSnips load after ~/.vim/bundle/ultisnips/UltiSnips
+" make ~/.vim/UltiSnips loading after ~/.vim/bundle/ultisnips/UltiSnips
 let g:UltiSnipsDontReverseSearchPath="1"
 let g:UltiSnipsExpandTrigger       = "<m-s>"
 " let g:UltiSnipsListSnippets        = "<c-m-s>"
@@ -120,3 +117,8 @@ xmap <leader>m <Plug>(quickhl-toggle)
 nmap <leader>M <Plug>(quickhl-reset)
 xmap <leader>M <Plug>(quickhl-reset)
 nmap <leader>n <Plug>(quickhl-match)
+
+
+" YCM
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
