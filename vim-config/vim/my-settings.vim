@@ -102,21 +102,21 @@ nnoremap <unique> <leader>ft :NERDTreeFind<CR>
 let g:NERDTreeMapToggleZoom = "<space>"
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                UltiSnips                                "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" UltiSnips is missing a setf trigger for snippets on BufEnter
-" autocmd vimrc BufEnter *.snippets setf snippets
+" UltiSnips
 
-" In UltiSnips snippet files, we want actual tabs instead of spaces for indents.
-" US will use those tabs and convert them to spaces if expandtab is set when the
-" user wants to insert the snippet.
-" autocmd vimrc FileType snippets set noexpandtab
-
-" we can't use <tab> as our snippet key since we use that with neocomplcache
-" let g:UltiSnipsSnippetsDir         = $HOME . '/dotfiles/vim/UltiSnips'
+" we can't use <tab> as our snippet key since we use that with ycm
+let g:UltiSnipsSnippetsDir         = $HOME . '/.vim/UltiSnips'
+" make ~/.vim/UltiSnips load after ~/.vim/bundle/ultisnips/UltiSnips
+let g:UltiSnipsDontReverseSearchPath="1"
 let g:UltiSnipsExpandTrigger       = "<m-s>"
-let g:UltiSnipsListSnippets        = "<c-m-s>"
-let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
-let g:UltiSnipsJumpBackwardTrigger = "<m-t>"
+" let g:UltiSnipsListSnippets        = "<c-m-s>"
+" let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
+" let g:UltiSnipsJumpBackwardTrigger = "<m-t>"
 let g:snips_author                 = 'CloudZu'
+
+" quickhl
+nmap <leader>m <Plug>(quickhl-toggle)
+xmap <leader>m <Plug>(quickhl-toggle)
+nmap <leader>M <Plug>(quickhl-reset)
+xmap <leader>M <Plug>(quickhl-reset)
+nmap <leader>n <Plug>(quickhl-match)
