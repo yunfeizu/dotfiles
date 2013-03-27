@@ -5,6 +5,8 @@ set autoindent
 set smartindent
 set cindent
 
+let g:visual_studio_mapping = 0
+
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
@@ -22,16 +24,19 @@ Bundle 'sjl/gundo.vim'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'klen/python-mode'
 Bundle 'Valloric/ListToggle'
+Bundle 'SirVer/ultisnips'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Bundle 't9md/vim-quickhl'
-Bundle 'SirVer/ultisnips'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/nerdcommenter'
 " vim-scripts repos
 Bundle 'YankRing.vim'
 Bundle 'vcscommand.vim'
 Bundle 'ShowPairs'
-Bundle 'Auto-Pairs'
 Bundle 'SudoEdit.vim'
+Bundle 'EasyGrep'
+Bundle 'VOoM'
 "................
 filetype plugin indent on
 
@@ -50,8 +55,7 @@ set gdefault
 set incsearch
 set showmatch
 set hlsearch
-nnoremap <tab> %
-vnoremap <tab> %
+nnoremap <tab> <C-w>w
 
 "enable menu but disable alt key menu shotcut
  " set guioptions+=m
@@ -105,7 +109,7 @@ let g:NERDTreeMapToggleZoom = "<space>"
 let g:UltiSnipsSnippetsDir         = $HOME . '/.vim/UltiSnips'
 " make ~/.vim/UltiSnips loading after ~/.vim/bundle/ultisnips/UltiSnips
 let g:UltiSnipsDontReverseSearchPath="1"
-let g:UltiSnipsExpandTrigger       = "<m-s>"
+" let g:UltiSnipsExpandTrigger       = "<m-s>"
 " let g:UltiSnipsListSnippets        = "<c-m-s>"
 " let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
 " let g:UltiSnipsJumpBackwardTrigger = "<m-t>"
@@ -122,3 +126,5 @@ nmap <leader>n <Plug>(quickhl-match)
 " YCM
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
