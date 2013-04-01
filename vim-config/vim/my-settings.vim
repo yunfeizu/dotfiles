@@ -28,7 +28,7 @@ Bundle 'SirVer/ultisnips'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Bundle 't9md/vim-quickhl'
-Bundle 'Lokaltog/vim-powerline'
+" Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdcommenter'
 " vim-scripts repos
 Bundle 'YankRing.vim'
@@ -37,6 +37,7 @@ Bundle 'ShowPairs'
 Bundle 'SudoEdit.vim'
 Bundle 'EasyGrep'
 Bundle 'VOoM'
+Bundle 'VimIM'
 "................
 filetype plugin indent on
 
