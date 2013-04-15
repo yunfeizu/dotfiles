@@ -15,7 +15,7 @@ flags = [
 '-Wall',
 '-Wextra',
 # '-Werror',
-'-Wc++98-compat',
+#'-Wc++98-compat',
 '-Wno-long-long',
 '-Wno-variadic-macros',
 '-fexceptions',
@@ -75,10 +75,10 @@ flags = [
 '-isystem', '/opt/esp-Pj119-a2-boost-1.49.0-qt-4.8.3-gcc-4.6.3/include',
 '-isystem', '/opt/merge-4.3.0/mc3inc',
 '-isystem', '/opt/dfm200-devel_dfm-team/include',
-'-isystem', '/opt/protobuf-2.3.0-gcc-4.6.3-static/include'
+'-isystem', '/opt/protobuf-2.3.0-gcc-4.6.3-static/include',
 
 # for dfm
-'-isystem', '/opt/tps1100-devel_dfm-team/include',
+'-isystem', '/opt/tps1100-devel_dfm-team/include'
 ]
 
 if compilation_database_folder:
