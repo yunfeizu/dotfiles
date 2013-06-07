@@ -7,8 +7,8 @@ snippet cl "class .. (class)" !
 class ${1:`!p snip.rv = snip.basename or "name"`}
 {
 public:
-  ${1/(\w+).*/$1/} (${2:arguments});
-  virtual ~${1/(\w+).*/$1/} ();
+  ${1/(\w+).*/$1/}(${2:arguments});
+  virtual ~${1/(\w+).*/$1/}();
 
 private:
   ${0:/* data */}
@@ -19,7 +19,7 @@ snippet ns "namespace .. (namespace)" !
 namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or "name"`}
 {
 ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
-}${1/.+/ \/* /m}$1${1/.+/ *\/ /m}
+}${1/.+/ \/\/ namespace /m}$1${1/.+/ /m}
 endsnippet
 
 snippet readfile "read file (readF)" !
@@ -35,6 +35,12 @@ endsnippet
 
 snippet cerr "std::cerr" !
 std::cerr << ${1} << std::endl;
+endsnippet
+
+snippet doc "document" !
+/**
+ * ${1}
+ */
 endsnippet
 
 # vim:ft=snippets:
