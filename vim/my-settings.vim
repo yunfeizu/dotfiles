@@ -28,8 +28,12 @@ Bundle 'SirVer/ultisnips'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Bundle 't9md/vim-quickhl'
-" Bundle 'Lokaltog/vim-powerline'
+Bundle 'mileszs/ack.vim'
+Bundle 'tomasr/molokai'
+Bundle 'altercation/vim-colors-solarized'
+"Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'kien/rainbow_parentheses.vim'
 " vim-scripts repos
 Bundle 'YankRing.vim'
 Bundle 'vcscommand.vim'
@@ -41,7 +45,13 @@ Bundle 'VimIM'
 "................
 filetype plugin indent on
 
-" silent exec "colorscheme desertEx"
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
+"syntax enable
+"set background=dark
+"silent exec "colorscheme solarized"
 silent exec "colorscheme molokai"
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
@@ -129,3 +139,9 @@ let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
+
+" rainbow_parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces

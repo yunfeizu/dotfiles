@@ -143,7 +143,7 @@ endif
 function s:SetGuiFont()
     if has("gui_gtk2")
         " set guifont=Luxi\ Mono\ 13
-        set guifont=Inconsolata\ 14
+        set guifont=Inconsolata\ 16
         " set guifont=Monaco\ 12
       elseif has("x11")
         " Also for GTK 1
@@ -169,16 +169,6 @@ function s:SetGuiFont()
         silent exec "nnoremap <unique> <M-F1> :set guifont=".font_name.":h11:cANSI<CR>"
     endif
 endfunction
-
-" color scheme define
-if has("gui_running")
-    " silent exec "colorscheme ex"
-    silent exec "colorscheme ex_lightgray"
-else " if we are in terminal mode
-    " NOTE: you cannot use if has('mac') to detect platform in terminal mode.
-    silent exec "colorscheme default"
-    " silent exec "colorscheme darkblue"
-endif
 
 " ------------------------------------------------------------------ 
 " Desc: Vim UI
