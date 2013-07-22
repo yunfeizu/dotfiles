@@ -1,0 +1,12 @@
+# ~/.tmuxinator/tps.yml
+# you can make as many tabs as you wish...
+
+project_name: tps
+project_root: /data/workspace/tps/branches/Pj119-dfm-team/
+socket_name: foo # Not needed.  Remove to use default socket
+tabs:
+  - editor:
+      layout: even-horizontal
+      panes:
+        - ls
+        - ls

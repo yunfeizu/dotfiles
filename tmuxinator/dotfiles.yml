@@ -1,0 +1,11 @@
+# ~/.tmuxinator/dotfiles.yml
+# you can make as many tabs as you wish...
+
+project_name: dotfiles
+project_root: /data/tools/dotfiles/
+tabs:
+  - editor:
+      layout: even-horizontal
+      panes:
+        - ls
+        - #empty, will just run plain bash

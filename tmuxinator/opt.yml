@@ -1,0 +1,12 @@
+# ~/.tmuxinator/opt.yml
+# you can make as many tabs as you wish...
+
+project_name: opt
+project_root: /opt/
+socket_name: foo # Not needed.  Remove to use default socket
+tabs:
+  - opt:
+      layout: even-horizontal
+      panes:
+        - ls
+        - ssh lixin@lixin

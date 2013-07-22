@@ -1,0 +1,11 @@
+# ~/.tmuxinator/dfm.yml
+# you can make as many tabs as you wish...
+
+project_name: dfm
+project_root: /data/workspace/dfm/branches/Pj119-dfm-team/
+tabs:
+  - editor: ls
+  - buid: ls
+  - test: ls
+  - svn: svn info
+  - logs: tail -f dfm.log
