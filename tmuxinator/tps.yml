@@ -1,12 +1,26 @@
-# ~/.tmuxinator/tps.yml
+# ~/.tmuxinator/.yml
 # you can make as many tabs as you wish...
 
-project_name: tps
-project_root: /data/workspace/tps/branches/Pj119-dfm-team/
-socket_name: foo # Not needed.  Remove to use default socket
-tabs:
+name: tps
+root: ~/work/svn/tps/branches/Pj119-dfm-team
+windows:
   - editor:
-      layout: even-horizontal
+      layout: main-vertical
       panes:
-        - ls
-        - ls
+        - pwd
+        - pwd
+        - pwd
+  - build:
+      layout: tiled
+      panes:
+        - cd packages/tpsw/cmd/treatmentmode;pwd
+        - cd packages/tpsw/lib/dfm;pwd
+        - cd executables/tpsw;pwd
+        - #empty, will just run plain bash
+  - test:
+      layout: tiled  
+      panes:
+        - cd test; pwd
+        - cd test/tpsw; pwd
+        - cd test/tpsw/packages/dfm/; pwd
+        - cd test/tpsw/packages/dfm/; pwd

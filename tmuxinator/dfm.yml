@@ -1,11 +1,24 @@
-# ~/.tmuxinator/dfm.yml
+# ~/.tmuxinator/.yml
 # you can make as many tabs as you wish...
 
-project_name: dfm
-project_root: /data/workspace/dfm/branches/Pj119-dfm-team/
-tabs:
-  - editor: ls
-  - buid: ls
-  - test: ls
-  - svn: svn info
-  - logs: tail -f dfm.log
+name: dfm
+root: ~/work/svn/dfm/branches/Pj119-dfm-team
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - ls
+        - #empty, will just run plain bash
+        - ls
+  - build:
+      layout: even-horizontal
+      panes:
+        -
+        - #empty, will just run plain bash
+  - test:
+      layout: tiled  
+      panes:
+        -
+        -
+        -
+        -

@@ -1,13 +1,12 @@
-# ~/.tmuxinator/blog.yml
+# ~/.tmuxinator/.yml
 # you can make as many tabs as you wish...
 
-project_name: Blog
-project_root: /data/blog/
-tabs:
-  - editor:
+name: sample
+root: /data/work/blog
+windows:
+  - blog:
       layout: main-vertical
       panes:
-        - gvim blog.vimentry &
-        - cd blog
-        - cd blog
-  - deploy: cd blog
+        - vim blog.vimentry
+        - cd blog-source; pwd
+        - cd blog-source; pwd

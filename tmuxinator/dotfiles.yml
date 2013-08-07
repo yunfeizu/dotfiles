@@ -1,11 +1,12 @@
-# ~/.tmuxinator/dotfiles.yml
+# ~/.tmuxinator/.yml
 # you can make as many tabs as you wish...
 
-project_name: dotfiles
-project_root: /data/tools/dotfiles/
-tabs:
+name: sample
+root: ~/work/dotfiles/
+windows:
   - editor:
-      layout: even-horizontal
+      layout: main-vertical
       panes:
-        - ls
-        - #empty, will just run plain bash
+        - 
+        - cd dotfiles; pwd
+        - cd dotfiles; pwd
